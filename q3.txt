@@ -1,0 +1,17 @@
+Possible Design: Time-Series Database
+
+- Data is indexed by time which can be stored in queried. This is ideal for monitoring data.
+
+- One Table for each API, each table would have the following fields:
+ - timestamp
+ - user_id	
+ - response time
+ - error 
+
+- The table would be indexed by timestamp field which allows efficient querying of data.
+- Additionaly, we can have another table to store aggregate data for each API,
+  such as the total number of requests and errors, the average response time,
+  and the error percentage.
+- This new table can be updated in real-time and the queries can be answered quickly.
+
+- To improve this design, we can use a distributed time-series database.
